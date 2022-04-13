@@ -1,0 +1,90 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+  background-color: lightblue;
+}
+
+p.red {
+  color: red;
+}
+
+div.red p {
+  /* All paragraphs inside a div with class red will be targeted*/
+  background-color: red;
+}
+
+div.red p span {
+  background-color: blue;
+  color: white;
+  padding: 5px;
+}
+
+h2,
+h3 {
+  /* Applying same styles to both elements */
+  background-color: yellow;
+}
+
+a[target] {
+  /* here anchor tag has a target attribute */
+  background-color: aqua;
+}
+
+/* CSS COMBINATORS */
+
+/*
+
+descendant combinator (space) - selects elements nested immediately after an element (ul li)
+direct child selector (>) - selects elements nested INSIDE a specific element
+adjacent sibling selector (+) - selects elements sitting NEXT to a specific element
+general sibling selector (~) - selects ALL the specified elements coming after a specific element
+
+*/
+
+/* DIRECT CHILD SELECTOR */
+div > span {
+  /* selects all span inside a div */
+  background-color: blueviolet;
+}
+
+/* ADJACENT SIBLING SELECTOR */
+div + p {
+  /* the FIRST p coming after a div will be targeted */
+  background-color: orange;
+}
+
+/* GENERAL SIBLING SELECTOR */
+.green ~ ul {
+  /* ALL ul coming after .green will be selected */
+  background-color: green;
+}
+
+/* PSEUDO SELECTORS */
+/*
+
+:first-child - Targets the first child of a parent
+:last-child - Targets the last child on a parent
+:nth-child(n/even/odd) - Targets every element that is the nth child of its parent
+
+*/
+
+.pseudoSelectors p:nth-child(4) {
+  background-color: lightgreen;
+}
+
+.pseudoSelectors p:first-child {
+  background-color: cadetblue;
+}
+
+.pseudoSelectors p:last-child {
+  background-color: midnightblue;
+  color: white;
+}
+
+.pseudoSelectors2 p:nth-child(even) {
+  background-color: purple;
+  color: white;
+}
+
+.pseudoSelectors2 p:nth-child(odd) {
+  background-color: violet;
+}
